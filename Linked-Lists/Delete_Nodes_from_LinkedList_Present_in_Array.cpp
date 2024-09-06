@@ -42,3 +42,33 @@ public:
         return head;
     }
 };
+
+
+/*
+Simplified version
+
+class Solution {
+public:
+    ListNode* modifiedList(vector<int>& nums, ListNode* head) {
+        if(!head)return NULL;
+        unordered_set<int>s(nums.begin(),nums.end());
+        // handling the case when head need to be deleted
+        while(head && s.find(head->val)!=s.end()){
+            ListNode*temp = head;
+            head = head->next;
+            delete temp;
+        }
+        ListNode*prev = NULL;
+        ListNode*curr = head;
+        while(curr->next){
+            if(s.find(curr->next->val)!= s.end()){
+                curr->next = curr->next->next;
+            }
+            else{
+                curr = curr->next;
+            }
+        }
+        return head;
+    }
+};
+*/
