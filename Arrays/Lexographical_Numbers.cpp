@@ -24,3 +24,24 @@ public:
         return lexicographicalNumbers;
     }
 };
+
+
+class Solution {
+public:
+    vector<int> lexicalOrder(int n) {
+        vector<int>res(n);
+        int x =1;
+        for(int i=0;i<n;i++){
+            res[i] =x;
+            if(x*10 <= n){
+                x*=10;
+            }
+            else{
+                if (x==n) x/=10; // last number
+                x++;             // for processing next digit
+                while(x%10==0) x/=10;  // removing trailing zeros
+            }
+        }
+        return res;
+    }
+};
