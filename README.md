@@ -1,4 +1,4 @@
-# α‑asb / codes
+# alpha‑asb / codes
 
 > A curated collection of algorithmic & data‑structure code, programming problem solutions, and utility snippets.
 
